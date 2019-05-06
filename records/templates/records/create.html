@@ -1,0 +1,10 @@
+<h1>Register a Record</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'records:register_record' question.id %}" method="post">
+{% csrf_token %}
+  <input type="text" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+  <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+<input type="submit" value="Vote">
+</form>

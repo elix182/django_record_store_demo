@@ -1,0 +1,9 @@
+{% if records_list %}
+    <ul>
+    {% for record in records_list %}
+        <li><a href="{% url 'records:detail' record.id %}">{{ record.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No records available.</p>
+{% endif %}

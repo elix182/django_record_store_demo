@@ -1,0 +1,99 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+0001_initial.py	../records/migrations/0001_initial.py	1;"	kind:file	line:1
+ALLOWED_HOSTS	../django_record_store_demo/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
+AUTH_PASSWORD_VALIDATORS	../django_record_store_demo/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:96
+Artist	../records/models.py	/^class Artist(models.Model):$/;"	kind:class	line:6
+ArtistType	../records/models.py	/^class ArtistType(models.Model):$/;"	kind:class	line:3
+BASE_DIR	../django_record_store_demo/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
+DATABASES	../django_record_store_demo/settings.py	/^DATABASES = {$/;"	kind:variable	line:77
+DEBUG	../django_record_store_demo/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
+INSTALLED_APPS	../django_record_store_demo/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:33
+LANGUAGE_CODE	../django_record_store_demo/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:115
+MIDDLEWARE	../django_record_store_demo/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:43
+Migration	../records/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:7
+ROOT_URLCONF	../django_record_store_demo/settings.py	/^ROOT_URLCONF = 'django_record_store_demo.urls'$/;"	kind:variable	line:53
+Record	../records/models.py	/^class Record(models.Model):$/;"	kind:class	line:16
+RecordType	../records/models.py	/^class RecordType(models.Model):$/;"	kind:class	line:13
+RecordsConfig	../records/apps.py	/^class RecordsConfig(AppConfig):$/;"	kind:class	line:3
+SECRET_KEY	../django_record_store_demo/settings.py	/^SECRET_KEY = '&sm-#b0p(e8s1gd6z_jwcz0)2diy)8tlwx$kj1%qxd7j^0+a&e'$/;"	kind:variable	line:23
+STATIC_URL	../django_record_store_demo/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:129
+Song	../records/models.py	/^class Song(models.Model):$/;"	kind:class	line:23
+TEMPLATES	../django_record_store_demo/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:55
+TIME_ZONE	../django_record_store_demo/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:117
+USE_I18N	../django_record_store_demo/settings.py	/^USE_I18N = True$/;"	kind:variable	line:119
+USE_L10N	../django_record_store_demo/settings.py	/^USE_L10N = True$/;"	kind:variable	line:121
+USE_TZ	../django_record_store_demo/settings.py	/^USE_TZ = True$/;"	kind:variable	line:123
+UsersConfig	../users/apps.py	/^class UsersConfig(AppConfig):$/;"	kind:class	line:4
+WSGI_APPLICATION	../django_record_store_demo/settings.py	/^WSGI_APPLICATION = 'django_record_store_demo.wsgi.application'$/;"	kind:variable	line:71
+__init__.py	../django_record_store_demo/__init__.py	1;"	kind:file	line:1
+__init__.py	../records/__init__.py	1;"	kind:file	line:1
+__init__.py	../records/migrations/__init__.py	1;"	kind:file	line:1
+__init__.py	../users/__init__.py	1;"	kind:file	line:1
+__init__.py	../users/migrations/__init__.py	1;"	kind:file	line:1
+admin.py	../records/admin.py	1;"	kind:file	line:1
+admin.py	../users/admin.py	1;"	kind:file	line:1
+application	../django_record_store_demo/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	../records/apps.py	1;"	kind:file	line:1
+apps.py	../users/apps.py	1;"	kind:file	line:1
+artist	../records/models.py	/^    artist = models.ForeignKey(Artist, on_delete=models.CASCADE)$/;"	kind:variable	line:20
+artist_detail	../records/views.py	/^def artist_detail(request, art_id):$/;"	kind:function	line:10
+artist_type	../records/models.py	/^    artist_type = models.ForeignKey(ArtistType, on_delete=models.CASCADE)$/;"	kind:variable	line:11
+artists	../records/models.py	/^    artists = models.ManyToManyField(Artist)$/;"	kind:variable	line:25
+artists	../records/views.py	/^def artists(request):$/;"	kind:function	line:7
+dependencies	../records/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:11
+field	../records/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='records.ArtistType'),$/;"	kind:variable	line:67
+field	../records/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='records.RecordType'),$/;"	kind:variable	line:62
+fields	../records/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:17
+fields	../records/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:27
+fields	../records/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:34
+fields	../records/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:44
+fields	../records/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:51
+founding_date	../records/models.py	/^    founding_date = models.DateField('date of founding')$/;"	kind:variable	line:8
+index	../records/views.py	/^def index(request):$/;"	kind:function	line:4
+initial	../records/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:9
+lenght_seconds	../records/models.py	/^    lenght_seconds = models.IntegerField()$/;"	kind:variable	line:19
+lyrics	../records/models.py	/^    lyrics = models.TextField(null=True)/;"	kind:variable	line:27
+manage.py	../manage.py	1;"	kind:file	line:1
+members	../records/models.py	/^    members = models.CharField(max_length=256, null=True)$/;"	kind:variable	line:10
+model_name	../records/migrations/0001_initial.py	/^            model_name='artist',$/;"	kind:variable	line:65
+model_name	../records/migrations/0001_initial.py	/^            model_name='record',$/;"	kind:variable	line:60
+models.py	../records/models.py	1;"	kind:file	line:1
+models.py	../users/models.py	1;"	kind:file	line:1
+name	../records/apps.py	/^    name = 'records'$/;"	kind:variable	line:4
+name	../records/migrations/0001_initial.py	/^            name='Artist',$/;"	kind:variable	line:16
+name	../records/migrations/0001_initial.py	/^            name='ArtistType',$/;"	kind:variable	line:26
+name	../records/migrations/0001_initial.py	/^            name='Record',$/;"	kind:variable	line:33
+name	../records/migrations/0001_initial.py	/^            name='RecordType',$/;"	kind:variable	line:43
+name	../records/migrations/0001_initial.py	/^            name='Song',$/;"	kind:variable	line:50
+name	../records/migrations/0001_initial.py	/^            name='artist_type',$/;"	kind:variable	line:66
+name	../records/migrations/0001_initial.py	/^            name='record_type',$/;"	kind:variable	line:61
+name	../records/models.py	/^    name = models.CharField(max_length=10)$/;"	kind:variable	line:14
+name	../records/models.py	/^    name = models.CharField(max_length=10)$/;"	kind:variable	line:4
+name	../records/models.py	/^    name = models.CharField(max_length=256)$/;"	kind:variable	line:17
+name	../records/models.py	/^    name = models.CharField(max_length=256)$/;"	kind:variable	line:24
+name	../records/models.py	/^    name = models.CharField(max_length=320)$/;"	kind:variable	line:7
+name	../users/apps.py	/^    name = 'users'$/;"	kind:variable	line:5
+operations	../records/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:14
+origin_country	../records/models.py	/^    origin_country = models.CharField(max_length=20)$/;"	kind:variable	line:9
+pub_date	../records/models.py	/^    pub_date = models.DateTimeField('date published')$/;"	kind:variable	line:18
+record	../records/models.py	/^    record = models.ForeignKey(Record, on_delete=models.CASCADE)$/;"	kind:variable	line:26
+record	../records/views.py	/^def record(request):$/;"	kind:function	line:13
+record_detail	../records/views.py	/^def record_detail(request, record_id):$/;"	kind:function	line:16
+record_type	../records/models.py	/^    record_type = models.ForeignKey(RecordType, on_delete=models.CASCADE)$/;"	kind:variable	line:21
+settings.py	../django_record_store_demo/settings.py	1;"	kind:file	line:1
+song_detail	../records/views.py	/^def song_detail(request, song_id):$/;"	kind:function	line:23
+songs	../records/views.py	/^def songs(request):$/;"	kind:function	line:19
+tests.py	../records/tests.py	1;"	kind:file	line:1
+tests.py	../users/tests.py	1;"	kind:file	line:1
+urlpatterns	../django_record_store_demo/urls.py	/^urlpatterns = [$/;"	kind:variable	line:19
+urlpatterns	../records/urls.py	/^urlpatterns = [$/;"	kind:variable	line:4
+urls.py	../django_record_store_demo/urls.py	1;"	kind:file	line:1
+urls.py	../records/urls.py	1;"	kind:file	line:1
+views.py	../records/views.py	1;"	kind:file	line:1
+views.py	../users/views.py	1;"	kind:file	line:1
+wsgi.py	../django_record_store_demo/wsgi.py	1;"	kind:file	line:1

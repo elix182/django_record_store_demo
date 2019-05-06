@@ -1,0 +1,11 @@
+{{ record.id }}
+{{ record.name }}
+{{ record.artist.name }}
+{{ record.pub_date }}
+{{ record.record_type.name }}
+{{ record.length_seconds }}
+
+Songs:
+{% for song in record.songs %}
+  <li><a href="/songs/{{ song.id }}/">{{ song.name }}</a></li>
+{% endfor %}
