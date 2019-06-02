@@ -1,0 +1,21 @@
+[
+  {
+    "model": "records.RecordType",
+    "pk": 1,
+    "fields":{
+      "name": "LP"
+    }
+  },{
+    "model": "records.RecordType",
+    "pk": 2,
+    "fields":{
+      "name": "EP"
+    }
+  },{
+    "model": "records.RecordType",
+    "pk": 3,
+    "fields":{
+      "name": "Single"
+    }
+  }
+]

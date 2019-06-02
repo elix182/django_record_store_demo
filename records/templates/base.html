@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>
+      {% block pagetitle %}{% endblock %}
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/foundation.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/django_record_store_demo.css' %}">
+    
+    {% block pagecss %}{% endblock %}
+
+  </head>
+
+ {% include 'navigation_bar.html' %}
+
+<body>
+  <div class="content row">
+    {% block pagecontent %}
+    {% endblock %}
+  </div>
+
+  <script src="{% static 'js/vendor/jquery.js' %}"></script>
+  <script src="{% static 'js/vendor/what-input.js' %}"></script>
+  <script src="{% static 'js/vendor/foundation.min.js' %}"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  {% block pagescripts %}{% endblock %}
+</body>
+
+<footer class="footer">
+  <div class="footer-panel">
+    Hecho por: Eliezer Pacheco Jiménez, 2019
+  </div>
+</footer>
+</html>

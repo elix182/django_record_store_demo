@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pagetitle %}Canciones{% endblock %}
+
+{% block pagecontent %}
+{% if songs_list %}
+    <ul>
+    {% for song in songs_list %}
+        <li><a href="{% url 'records:song_details' song.id %}">
+          {{ song.name }} - 
+          {% if song.artists|length > 1 %}
+            {% for artist in song.artists %}
+                {{ artist.name }} ,
+            {% endfor %}
+          {% else %}
+            {{ song.artists.0.name }}
+          {% endif %}
+        </a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay canciones registradas.</p>
+{% endif %}
+{% endblock %}
+
+{% block pagescripts %}
+  <script src="{% static 'records/songs/index.js' %}"></script>
+{% endblock %}

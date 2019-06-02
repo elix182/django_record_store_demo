@@ -53,6 +53,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=256)),
                 ('lyrics', models.TextField(null=True)),
                 ('artists', models.ManyToManyField(to='records.Artist')),
+                ('composer', models.CharField(max_length=256)),
                 ('record', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='records.Record')),
             ],
         ),

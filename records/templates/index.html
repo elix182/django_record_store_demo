@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block pagetitle %} Mundo de Records{% endblock %}
+{% block pagecontent %}
+<div class="header">
+  <h1>Bienvenido al <strong>Mundo de Records</strong></h1>
+  <h3 style="text-align: left; font-style: italic;">- Disculpe, ¿Venden Música?</h3>
+  <h3 style="text-align: right; font-style: italic;">¿Aquí?,¿En el Mundo de Records?, Oye no lo se. -</h3>
+  <br>
+  {% comment %} <img src="{% static 'img/hqdefault.jpg' %}" alt="kek"> {% endcomment %}
+</div>
+<div class="panel callout radius">
+  <h5>¿De que se trata esto?</h5>
+  <p>
+    En esta pagina se pretende reunir la mayor cantidad de información de música
+    y a su vez poder propocionarte una manera de obtenerlos mediante una tienda.
+  </p>
+</div>
+<div class="panel callout radius">
+  <h5>Interesante, ¿Puedo ayudar?</h5>
+  <p>
+    Si, solo es necesario que te registres en el sistema. No te preocupes, tu información personal
+    <a data-open="privacyModal">está segura con nosotros.</a>
+  </p>
+</div>
+
+<div id="privacyModal" class="reveal" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out">
+  <h2 id="modalTitle">Aviso de Privacidad</h2>
+  {% comment %} <p class="lead">Your couch.  It is mine.</p> {% endcomment %}
+  <p>Tus datos están seguros con nosotros</p>
+  <p>No nos hacemos responsables por posibles problemas con la autoridad</p>
+  <p>Si sabes que esto es un demo y no es como que de mucha relevancia, ¿Verdad?</p>
+  <a class="close-button" data-close>&#215;</a>
+</div>
+
+<div class="panel callout radius">
+  <h5>Ya enserio, ¿De que trata esto?</h5>
+  <p>
+    Este software es un demo de una simple tienda de música y de "ventas" del inventario de la empresa 
+    <strong>Mundo de Records</strong>, está hecho en Django puro y la idea es probar las operaciones básicas
+    de un sistema web con este framework.
+  </p>
+</div>
+{% endblock %}

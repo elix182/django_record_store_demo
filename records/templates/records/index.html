@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pagetitle %}Albums{% endblock %}
+{% block pagecontent %}
 {% if records_list %}
     <ul>
     {% for record in records_list %}
@@ -5,5 +10,10 @@
     {% endfor %}
     </ul>
 {% else %}
-    <p>No records available.</p>
+    <p>No hay albums registrados.</p>
 {% endif %}
+{% endblock %}
+
+{% block pagescripts %}
+  <script src="{% static 'records/records/index.js' %}"></script>
+{% endblock %}

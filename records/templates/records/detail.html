@@ -7,5 +7,5 @@
 
 Songs:
 {% for song in record.songs %}
-  <li><a href="/songs/{{ song.id }}/">{{ song.name }}</a></li>
+  <li><a href="{% url 'songs:detail' song.id %}">{{ song.name }}</a></li>
 {% endfor %}

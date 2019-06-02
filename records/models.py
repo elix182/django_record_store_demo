@@ -3,15 +3,15 @@ from django.db import models
 class ArtistType(models.Model):
     name = models.CharField(max_length=10)
 
+class RecordType(models.Model):
+    name = models.CharField(max_length=10)
+
 class Artist(models.Model):
     name = models.CharField(max_length=320)
     founding_date = models.DateField('date of founding')
     origin_country = models.CharField(max_length=20)
     members = models.CharField(max_length=256, null=True)
     artist_type = models.ForeignKey(ArtistType, on_delete=models.CASCADE)
-
-class RecordType(models.Model):
-    name = models.CharField(max_length=10)
 
 class Record(models.Model):
     name = models.CharField(max_length=256)

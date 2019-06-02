@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pagetitle %}Artistas{% endblock %}
+
+{% block pagecontent %}
+  {% if artists_list %}
+    <ul>
+    {% for artist in artists_list %}
+        <li><a href="{% url 'records:aritst_details' artist.id %}">{{ artist.name }}</a></li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay artistas registrados.</p>
+  {% endif %}
+{% endblock %}
+
+{% block pagescripts %}
+  <script src="{% static 'records/artists/index.js' %}"></script>
+{% endblock %}

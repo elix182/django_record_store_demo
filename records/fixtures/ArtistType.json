@@ -1,0 +1,15 @@
+[
+  {
+    "model": "records.ArtistType",
+    "pk": 1,
+    "fields":{
+      "name": "Band"
+    }
+  },{
+    "model": "records.ArtistType",
+    "pk": 2,
+    "fields":{
+      "name": "Solo"
+    }
+  }
+]
