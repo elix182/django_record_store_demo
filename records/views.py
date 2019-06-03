@@ -24,8 +24,7 @@ def artists(request):
 
 def artist_detail(request, artist_id):
   artist = get_object_or_404(Artist, pk=artist_id)
-  context = {'artist': artist}
-  return render(request, 'artists/detail.html', context)
+  return HttpResponse(serializers.serialize('json', [ artist, ]))
 
 def create_artist(request):
   return render(request, 'artists/create.html')
@@ -57,7 +56,8 @@ def update_artist_request(request, artist_id):
   founding_date = request.POST['founding_date']
   origin_country = request.POST['origin_country']
   members = request.POST['members']
-  artist_type = ArtistType.objects.get(request.POST['artist_type'])
+  artist_type_id = int(request.POST['artist_type'])
+  artist_type = ArtistType.objects.get(pk=artist_type_id)
   artist.name = name
   artist.founding_date = founding_date
   artist.origin_country = origin_country

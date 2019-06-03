@@ -16,21 +16,21 @@
     <table>
       <thead>
         <tr>
-          <th>Nombre Artista</th>
-          <th>Fecha de fundación/Inicio de carrera</th>
-          <th>Ver</th>
-          <th>Editar</th>
-          <th>Eliminar</th>
-          <th>Albumes</th>
+          <th>Nombre del Artista</th>
+          <th>Tipo</th>
+          <th width="50">Ver</th>
+          <th width="50">Editar</th>
+          <th width="50">Eliminar</th>
+          <th width="50">Albumes</th>
         </tr>
       </thead>
       <tbody>
       {% for artist in artists_list %}
         <tr>
           <td>{{ artist.name }}</td>
-          <td>{{ artist.founding_date }}</td>
+          <td>{{ artist.artist_type.name }}</td>
           <td>
-            <button class="button primary" >
+            <button class="button primary" onClick="detailsArtist('{{ artist.id }}')">
               <i class="fi-eye"></i>
             </button>
           </td>
@@ -53,6 +53,17 @@
       {% endfor %}
       </tbody>
     </table>
+
+    <div id="detailsModal" class="reveal" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out">
+      <h2 id="artistTitle"></h2>
+      <p id="artistName"></p>
+      <p id="artistType"></p>
+      <p id="artistOriginCountry"></p>
+      <p id="artistFoundingDate"></p>
+      <p id="artistMembers"></p>
+      <a class="close-button" data-close>&#215;</a>
+    </div>
+
   {% else %}
     <p>No hay artistas registrados.</p>
   {% endif %}
