@@ -1,7 +1,9 @@
-<ul>
-  <li><a href="{% url 'welcome' %}">Inicio</a></li>
-  <li><a href="{% url 'records:record' %}">Albums</a></li>
-  <li><a href="{% url 'records:artists' %}">Artistas</a></li>
-  <li><a href="{% url 'records:songs' %}">Canciones</a></li>
-  <li style="float:right"><a class="active">Iniciar sesión</a></li>
-</ul> 
+<nav>
+  <ul>
+    <li><a href="{% url 'welcome' %}"><i class="fi-home"></i></a></li>
+    <li><a href="{% url 'records:record' %}"><i class="fi-record"></i> Albums</a></li>
+    <li><a href="{% url 'records:artists' %}"><i class="fi-torsos-all"></i> Artistas</a></li>
+    <li><a href="{% url 'records:songs' %}"><i class="fi-music"></i> Canciones</a></li>
+    <li style="float:right"><a href="{% url 'admin:login' %}"><i class="fi-torso"></i> Iniciar sesión</a></li>
+  </ul> 
+</nav>

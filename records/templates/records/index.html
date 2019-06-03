@@ -2,6 +2,14 @@
 {% load static %}
 
 {% block pagetitle %}Albums{% endblock %}
+{% block title %}Albums{% endblock %}
+{% block back %}{% url 'welcome' %}{% endblock %}
+{% block buttons %}
+  <a class="button" href="{% url 'records:create_record' %}">
+    <i class="fi-plus"></i>
+    Album
+  </a>
+{% endblock %}
 {% block pagecontent %}
 {% if records_list %}
     <ul>

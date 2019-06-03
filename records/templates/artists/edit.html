@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pagetitle %}Editar Artista{% endblock %}
+{% block title %}Editar Artista - {{ artist.name }}{% endblock %}
+{% block back %}{% url 'records:artists' %}{% endblock %}
+
+{% block pagecontent %}
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="{% url 'records:create_artist_request' %}" method="post" >
+  {% csrf_token %}
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Nombre del artista
+        <input type="text" name="name" placeholder="Nombre del artista" value ="{{ artist.name }}"/>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Selecciona el tipo de artista
+        <select id="artist_type" name="artist_type">
+        </select>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <label>Fecha de fundación/Inicio de carrera
+        <input type="date" name="founding_date" value="{{ artist.founding_date }}" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <label>País de origen
+        <input type="text" name="origin_country" placeholder="País" value="{{ artist.origin_country }}" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns" id="members_row">
+      <div class="row collapse">
+        <label>Integrantes</label>
+        <div class="small-9 columns">
+          <input type="text" name="members" placeholder="small-9.columns" value="{{ artist.members }}"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <input class="button" type="submit" value="Actualizar">
+    </div>
+  </div>
+</form>
+</div>
+{% endblock %}
+
+{% block pagescripts %}
+  <script src="{% static 'records/artists/edit.js' %}"></script>
+{% endblock %}

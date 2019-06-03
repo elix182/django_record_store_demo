@@ -1,3 +1,11 @@
+html {
+  background: gray;
+}
+
+form {
+  margin: 10pt 100pt 10pt 100pt;
+}
+
 .header {
   padding: 60px;
   text-align: center;
@@ -6,7 +14,12 @@
   font-size: 30px;
 }
 
+.navigation {
+  background: #f9fcfd
+}
+
 .content {
+  background: white;
   margin: 10pt 25pt 10pt 25pt;
 }
 

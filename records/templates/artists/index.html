@@ -2,14 +2,57 @@
 {% load static %}
 
 {% block pagetitle %}Artistas{% endblock %}
+{% block title %}Artistas{% endblock %}
+{% block back %}{% url 'welcome' %}{% endblock %}
+{% block buttons %}
+  <a class="button" href="{% url 'records:create_artist' %}">
+    <i class="fi-plus"></i>
+    Artista
+  </a>
+{% endblock %}
 
 {% block pagecontent %}
   {% if artists_list %}
-    <ul>
-    {% for artist in artists_list %}
-        <li><a href="{% url 'records:aritst_details' artist.id %}">{{ artist.name }}</a></li>
-    {% endfor %}
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre Artista</th>
+          <th>Fecha de fundación/Inicio de carrera</th>
+          <th>Ver</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+          <th>Albumes</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for artist in artists_list %}
+        <tr>
+          <td>{{ artist.name }}</td>
+          <td>{{ artist.founding_date }}</td>
+          <td>
+            <button class="button primary" >
+              <i class="fi-eye"></i>
+            </button>
+          </td>
+          <td>
+            <a class="button success" href="{% url 'records:edit_artist' artist.id %}">
+              <i class="fi-pencil"></i>
+            </a>
+          </td>
+          <td>
+            <button class="button alert" >
+              <i class="fi-trash"></i>
+            </button>
+          </td>
+          <td>
+            <button class="button secondary" >
+              <i class="fi-record"></i>
+            </button>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
   {% else %}
     <p>No hay artistas registrados.</p>
   {% endif %}

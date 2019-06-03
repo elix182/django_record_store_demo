@@ -1,7 +1,19 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.core import serializers
+from datetime import datetime
 from .models import *
+
+# =========== Artist Type ==========
+def get_artist_type(request):
+  types_list = ArtistType.objects.all()
+  return HttpResponse(serializers.serialize('json', types_list))
+
+# =========== Record Type ==========
+def get_record_type(request):
+  types_list = RecordType.objects.all()
+  return HttpResponse(serializers.serialize('json', types_list))
 
 # =========== Artist ===========
 
@@ -15,7 +27,7 @@ def artist_detail(request, artist_id):
   context = {'artist': artist}
   return render(request, 'artists/detail.html', context)
 
-def create_artist(request, artist_id):
+def create_artist(request):
   return render(request, 'artists/create.html')
 
 def edit_artist(request, artist_id):
@@ -28,10 +40,14 @@ def create_artist_request(request):
   founding_date = request.POST['founding_date']
   origin_country = request.POST['origin_country']
   members = request.POST['members']
-  artist_type = ArtistType.objects.get(request.POST['artist_type'])
-  artist = Record(name=name, founding_date=founding_date, origin_country=origin_country,
-   members=members)
-  artist.type = artist_type
+  artist_type_id = int(request.POST['artist_type'])
+  artist_type = ArtistType.objects.get(pk=artist_type_id)
+  artist = Artist()
+  artist.name = name
+  artist.origin_country = origin_country
+  artist.members = members
+  artist.founding_date = datetime.strptime(founding_date, "%Y-%m-%d").date()
+  artist.artist_type = artist_type
   artist.save()
   return HttpResponseRedirect(reverse('records:artists'))
 
@@ -66,6 +82,15 @@ def record_detail(request, record_id):
   record = get_object_or_404(Record, pk=record_id)
   context = {'record': record}
   return render(request, 'records/detail.html', context)
+
+def create_record(request):
+  return render(request, 'records/create.html')
+
+def edit_record(request, record_id):
+  record = get_object_or_404(Artist, pk=record_id)
+  context = {'record': record}
+  return render(request, 'records/edit.html', context)
+
 
 def create_record_request(request):
   name = request.POST['name']

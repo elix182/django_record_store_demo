@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block pagetitle %}Canciones{% endblock %}
-
+{% block title %}Canciones{% endblock %}
+{% block back %}{% url 'welcome' %}{% endblock %}
 {% block pagecontent %}
 {% if songs_list %}
     <ul>

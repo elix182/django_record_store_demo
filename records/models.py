@@ -9,7 +9,7 @@ class RecordType(models.Model):
 class Artist(models.Model):
     name = models.CharField(max_length=320)
     founding_date = models.DateField('date of founding')
-    origin_country = models.CharField(max_length=20)
+    origin_country = models.CharField(max_length=128)
     members = models.CharField(max_length=256, null=True)
     artist_type = models.ForeignKey(ArtistType, on_delete=models.CASCADE)
 

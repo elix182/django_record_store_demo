@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>
-      {% block pagetitle %}{% endblock %}
+      Mundo de Records | {% block pagetitle %}{% endblock %}
     </title>
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/foundation.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/foundation-icons.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/django_record_store_demo.css' %}">
     
@@ -16,26 +17,44 @@
 
   </head>
 
- {% include 'navigation_bar.html' %}
+  {% include 'navigation_bar.html' %}
+  {% block bar %}
+    <div class="panel callout radius">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+          <div class="cell shrink">
+            <a class="button secondary" href="{% block back %}{% endblock %}">
+              <i class="fi-arrow-left"></i>
+            </a>
+          </div>
+          <div class="cell auto" >          
+            <h4 class="float-center">{% block title %}{% endblock %}</h4>
+          </div>
+          <div class="cell shrink" >
+            {% block buttons %}{% endblock %}          
+          </div>
+        </div> 
+      </div>
+    </div>
+  {% endblock %}
 
-<body>
-  <div class="content row">
-    {% block pagecontent %}
-    {% endblock %}
-  </div>
+  <body>
+    <div class="content row">
+      {% block pagecontent %}
+      {% endblock %}
+    </div>
 
-  <script src="{% static 'js/vendor/jquery.js' %}"></script>
-  <script src="{% static 'js/vendor/what-input.js' %}"></script>
-  <script src="{% static 'js/vendor/foundation.min.js' %}"></script>
-  <script>
-    $(document).foundation();
-  </script>
-  {% block pagescripts %}{% endblock %}
-</body>
-
-<footer class="footer">
-  <div class="footer-panel">
-    Hecho por: Eliezer Pacheco Jiménez, 2019
-  </div>
-</footer>
+    <script src="{% static 'js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'js/vendor/what-input.js' %}"></script>
+    <script src="{% static 'js/vendor/foundation.min.js' %}"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    {% block pagescripts %}{% endblock %}
+  </body>
+  <footer class="footer">
+    <div class="footer-panel">
+      Hecho por: Eliezer Pacheco Jiménez, 2019
+    </div>
+  </footer>
 </html>
