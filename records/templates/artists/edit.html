@@ -12,7 +12,7 @@
   <div class="row">
     <div class="large-12 columns">
       <label>Nombre del artista
-        <input type="text" name="name" placeholder="Nombre del artista" value ="{{ artist.name }}"/>
+        <input type="text" name="name" placeholder="Nombre del artista" value ="{{ artist.name }}" required/>
       </label>
     </div>
   </div>
@@ -27,14 +27,14 @@
   <div class="row">
     <div class="large-4 columns">
       <label>Fecha de fundación/Inicio de carrera
-        <input type="date" name="founding_date" placeholder="" value="{{ artist.founding_date }}" />
+        <input type="date" name="founding_date" placeholder="" value="{{ artist.founding_date }}" required/>
       </label>
     </div>
   </div>
   <div class="row">
     <div class="large-4 columns">
       <label>País de origen
-        <input type="text" name="origin_country" placeholder="País" value="{{ artist.origin_country }}" />
+        <input type="text" name="origin_country" placeholder="País" value="{{ artist.origin_country }}" required/>
       </label>
     </div>
   </div>
@@ -43,7 +43,7 @@
       <div class="row collapse">
         <label>Integrantes</label>
         <div class="small-9 columns">
-          <input type="text" name="members" placeholder="small-9.columns" value="{{ artist.members }}"/>
+          <input type="text" name="members" placeholder="" value="{{ artist.members }}"/>
         </div>
       </div>
     </div>

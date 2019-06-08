@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.core import serializers
 from datetime import datetime
 from .models import *
+from .forms import *
 
 # =========== Artist Type ==========
 def get_artist_type(request):
@@ -35,20 +36,24 @@ def edit_artist(request, artist_id):
   return render(request, 'artists/edit.html', context)
 
 def create_artist_request(request):
-  name = request.POST['name']
-  founding_date = request.POST['founding_date']
-  origin_country = request.POST['origin_country']
-  members = request.POST['members']
-  artist_type_id = int(request.POST['artist_type'])
-  artist_type = ArtistType.objects.get(pk=artist_type_id)
-  artist = Artist()
-  artist.name = name
-  artist.origin_country = origin_country
-  artist.members = members
-  artist.founding_date = datetime.strptime(founding_date, "%Y-%m-%d").date()
-  artist.artist_type = artist_type
-  artist.save()
-  return HttpResponseRedirect(reverse('records:artists'))
+  valid = ArtistForm(request.POST)
+  if valid.is_valid():
+    name = request.POST['name']
+    founding_date = request.POST['founding_date']
+    origin_country = request.POST['origin_country']
+    members = request.POST['members']
+    artist_type_id = int(request.POST['artist_type'])
+    artist_type = ArtistType.objects.get(pk=artist_type_id)
+    artist = Artist()
+    artist.name = name
+    artist.origin_country = origin_country
+    artist.members = members
+    artist.founding_date = datetime.strptime(founding_date, "%Y-%m-%d").date()
+    artist.artist_type = artist_type
+    artist.save()
+    return HttpResponseRedirect(reverse('records:artists'))
+  else:
+    return HttpResponseRedirect(reverse('records:create_artist'))
 
 def update_artist_request(request, artist_id):
   artist = get_object_or_404(Artist, pk=artist_id)

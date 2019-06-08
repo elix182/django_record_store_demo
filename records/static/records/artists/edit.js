@@ -16,6 +16,8 @@ function fetchArtistTypes(){
       let type = {}
       let optionHTML = ''
       let i = 0
+      optionHTML = `<option value="0"></option>`
+      artistTypeDOM.append(optionHTML)
       for(i = 0; i < types.length; ++i){
         type = types[i]
         optionHTML = `<option value="${type.pk}">${type.fields.name}</option>`
